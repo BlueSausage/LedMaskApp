@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.createNewImageBtn).setOnClickListener {
             val newImageIntent = Intent(this, CreateNewImageActivity::class.java)
             startActivity(newImageIntent)
+            Log.d("CREATE_NEW_IMAGE", "started CreateNewImageActivity")
         }
 
     }
