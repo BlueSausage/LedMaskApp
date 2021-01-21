@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ColorPickerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="false"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btnColorPreview"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#F00" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#555555"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hashtag"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/strColor"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/chooseColor"
+                    android:background="#555555"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLength="8"
+                    android:padding="5sp"
+                    android:text="FFFF0000"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/brightnessBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:padding="20dp"
+            android:progress="255"
+            android:progressDrawable="@drawable/seekbar_a_progress"
+            android:thumb="@drawable/seekbar_a_thumb" />
+
+        <SeekBar
+            android:id="@+id/redBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:padding="20dp"
+            android:progress="255"
+            android:progressDrawable="@drawable/seekbar_r_progress"
+            android:thumb="@drawable/seekbar_r_thumb" />
+
+        <SeekBar
+            android:id="@+id/greenBar"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:padding="20dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/seekbar_g_progress"
+            android:thumb="@drawable/seekbar_g_thumb" />
+
+        <SeekBar
+            android:id="@+id/blueBar"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:padding="20dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/seekbar_b_progress"
+            android:thumb="@drawable/seekbar_b_thumb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/colorCancelBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="#CCCCCC"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/colorAppyBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="#CCCCCC"
+                android:text="@string/apply" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

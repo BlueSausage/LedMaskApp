@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LedMask</string>
+    <string name="createNewImage">Neues Bild</string>
+    <string name="headline">Zeichne dein Bild</string>
+    <string name="sendImage">Senden</string>
+    <string name="chooseColor">Wähle eine Farbe</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="apply">Apply</string>
+    <string name="hashtag">#</string>
+</resources>
