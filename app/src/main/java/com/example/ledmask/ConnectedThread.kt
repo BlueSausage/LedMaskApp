@@ -23,20 +23,18 @@ class ConnectedThread(socket: BluetoothSocket) : Thread() {
 
         try {
             mmOutStream.flush()
-        } catch (e: IOException) {}
+        } catch (e: IOException) {
+        }
         Log.i(TAG, "IO's obtained")
         mmOutStream.flush()
     }
 
-    fun write(bytes: ByteArray) {
-        fun write(message: String) {
-            val msgBuffer = message.toByteArray()
-            try {
-                Log.i(TAG, "Writing bytes")
-                mmOutStream.write(bytes)
-            } catch (e: IOException) {}
+    fun write(message: String) {
+        val msgBuffer = message.toByteArray()
+        try {
+            Log.i(TAG, "Sending Message")
             mmOutStream.write(msgBuffer)
-        }
+        } catch (e: IOException) {}
     }
 
     fun cancel() {

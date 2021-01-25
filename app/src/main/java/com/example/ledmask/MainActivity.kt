@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             Log.i(BLUETOOTHTAG, "Creating and running Thread")
             bluetoothConnectedThread = ConnectedThread(mmSocket)
             bluetoothConnectedThread!!.start()
+            bluetoothConnectedThread!!.write("test\n")
         }
     }
 }
