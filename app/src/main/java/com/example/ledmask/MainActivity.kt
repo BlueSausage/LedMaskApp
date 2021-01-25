@@ -13,10 +13,10 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val BLUETOOTHTAG = "LEDMASKBLUETOOTH"
-    private val bluetoothAdapter : BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
-    private lateinit var mmSocket : BluetoothSocket
+    private val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
+    private lateinit var mmSocket: BluetoothSocket
     private lateinit var mmDevice: BluetoothDevice
-    private var bluetoothConnectedThread : ConnectedThread? = null
+    private var bluetoothConnectedThread: ConnectedThread? = null
     private val REQUEST_ENABLE_BT = 1
     private val MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
 
@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.createNewImageBtn).setOnClickListener {
-            bluetoothConnectedThread?.write("Button pressed\n".toByteArray())
             val newImageIntent = Intent(this, CreateNewImageActivity::class.java)
             startActivity(newImageIntent)
         }
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
         if (bluetoothAdapter?.isEnabled == true) {
             val tmp: BluetoothSocket?
-            val pairedDevices : Set<BluetoothDevice>? = bluetoothAdapter.bondedDevices
+            val pairedDevices: Set<BluetoothDevice>? = bluetoothAdapter.bondedDevices
             pairedDevices?.forEach { device ->
                 val deviceName = device.name
                 val deviceHardwareAddress = device.address
@@ -62,11 +61,11 @@ class MainActivity : AppCompatActivity() {
                 mmSocket = tmp
                 mmSocket.connect()
                 Log.i(BLUETOOTHTAG, "Connected to: ${mmDevice.name}")
-            } catch (e : IOException) {
+            } catch (e: IOException) {
                 Log.i(BLUETOOTHTAG, "Can't connect to ${mmDevice.name} because ${e.message}")
                 try {
                     mmSocket.close()
-                } catch (c : IOException) {
+                } catch (c: IOException) {
                     return
                 }
             }
